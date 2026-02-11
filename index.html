@@ -91,7 +91,7 @@
         .strat-view .alert-banner {
             background: #ffffff; /* Fondo blanco */
             border: 3px solid #dc2626; /* Borde rojo sólido */
-            color: #1f2937; /* Texto casi negro (gris muy oscuro) para legibilidad */
+            color: #1f2937; /* Texto casi negro */
             padding: 20px;
             border-radius: 15px;
             margin-bottom: 30px;
@@ -103,7 +103,7 @@
             font-size: 1.8em; 
             margin-bottom: 10px; 
             font-weight: bold; 
-            color: #dc2626; /* Título en rojo para mantener la alerta */
+            color: #dc2626; 
         }
         
         .strat-view .alert-banner p { 
@@ -329,7 +329,7 @@
                 strat: {
                     mainTitle: "📊 Dashboard: Análisis de Margen",
                     mainSub: "Comparativa 2024 vs 2025 | Actualizado: 11 de febrero 2026",
-                    alertTitle: "🚨 ALERTA CRÍTICA",
+                    alertTitle: "SITUACIÓN GENERAL",
                     alertDesc: "Caída dramática del margen: -17.45 puntos porcentuales",
                     alertSub: "Margen actual 39.76% - Por debajo del umbral saludable de 50%",
                     kpi1: "Margen Promedio por KG 2025",
@@ -345,8 +345,7 @@
                     insightDesc: "La brecha se amplió dramáticamente: El costo del café subió +53.3% (de $127/kg a $195/kg), pero el precio de venta solo aumentó +9.4% (de $291/kg a $318/kg). Esta diferencia de ~44 puntos porcentuales sin trasladar está destruyendo tu margen.",
                     table1Title: "Composición Beneficio vs Costo",
                     change: "Cambio",
-                    chart2Title: "Impacto por Tipo de Café",
-                    chart3Title: "Escenarios de Recuperación",
+                    chart2Title: "Margen por Tipo de Café",
                     table2Title: "Top 5 Clientes por Margen Absoluto (2025)",
                     planTitle: "Plan de Acción Urgente",
                     timelineTitle: "📅 Timeline de Implementación",
@@ -356,6 +355,7 @@
                     ctrl: "CONTROL Y MONITOREO", ctrlTitle: "Sistema de Seguimiento Continuo",
                     warnTitle: "⚠️ Consecuencias de No Actuar",
                     warnDesc: "A este ritmo, en 2026 tu margen podría caer por debajo del 30%, haciendo el negocio inviable. El costo del café sigue siendo volátil y podría subir más. Es mejor perder algunos clientes por precio que operar con márgenes insostenibles. Un negocio con margen del 40% es más frágil que uno con 55%, incluso si el segundo tiene menos ventas.",
+                    clickToHide: "Da click en un elemento de la leyenda para ocultarlo",
                     steps: [
                         {t: "Aumento base del 30-40%", d: "Para recuperar el margen perdido, necesitas aumentar precios significativamente. Un aumento del 35% te llevaría a un margen cercano al 50%."},
                         {t: "Estrategia escalonada:", l: ["Inmediato (+20%): Clientes nuevos", "30 días (+15%): Contratos flexibles", "60-90 días (+10-15%): Clientes clave"]},
@@ -456,7 +456,7 @@
                 strat: {
                     mainTitle: "📊 Tableau de Bord: Analyse de la Marge",
                     mainSub: "Comparatif 2024 vs 2025 | Mis à jour: 11 février 2026",
-                    alertTitle: "🚨 ALERTE CRITIQUE",
+                    alertTitle: "SITUATION GÉNÉRALE",
                     alertDesc: "Chute dramatique de la marge: -17.45 points de pourcentage",
                     alertSub: "Marge actuelle 39.76% - En dessous du seuil sain de 50%",
                     kpi1: "Marge Moyenne par KG 2025",
@@ -472,8 +472,7 @@
                     insightDesc: "L'écart s'est creusé de façon spectaculaire: Le coût du café a augmenté de +53.3% (de 127$/kg à 195$/kg), mais le prix de vente n'a augmenté que de +9.4% (de 291$/kg à 318$/kg). Cet écart de ~44 points non répercuté détruit votre marge.",
                     table1Title: "Composition Bénéfice vs Coût",
                     change: "Changement",
-                    chart2Title: "Impact par Type de Café",
-                    chart3Title: "Scénarios de Récupération",
+                    chart2Title: "Marge par Type de Café",
                     table2Title: "Top 5 Clients par Marge Absolue (2025)",
                     planTitle: "Plan d'Action Urgent",
                     timelineTitle: "📅 Calendrier de Mise en Œuvre",
@@ -483,6 +482,7 @@
                     ctrl: "CONTRÔLE ET SUIVI", ctrlTitle: "Système de Suivi Continu",
                     warnTitle: "⚠️ Conséquences de l'Inaction",
                     warnDesc: "À ce rythme, en 2026 votre marge pourrait tomber sous les 30%, rendant l'activité non viable. Le coût du café reste volatil. Il vaut mieux perdre quelques clients sur le prix que d'opérer avec des marges insoutenables.",
+                    clickToHide: "Cliquez sur un élément de la légende pour le masquer",
                     steps: [
                         {t: "Augmentation de base de 30-40%", d: "Pour récupérer la marge perdue, une augmentation significative est nécessaire. +35% vous ramènerait près de 50% de marge."},
                         {t: "Stratégie échelonnée:", l: ["Immédiat (+20%): Nouveaux clients", "30 jours (+15%): Contrats flexibles", "60-90 jours (+10-15%): Clients clés"]},
@@ -891,7 +891,7 @@
                         data: {
                             labels: datosMensuales[2024].meses,
                             datasets: [
-                                { label: 'Precio 2024', data: datosMensuales[2024].precio, borderColor: '#9d4edd', backgroundColor: 'rgba(157, 78, 221, 0.1)', borderWidth: 2, tension: 0.4, fill: true, pointRadius: 0 },
+                                { label: 'Precio 2024', data: datosMensuales[2024].precio, borderColor: '#4169E1', backgroundColor: 'rgba(65, 105, 225, 0.1)', borderWidth: 2, tension: 0.4, fill: true, pointRadius: 0 },
                                 { label: 'Costo 2024', data: datosMensuales[2024].costo, borderColor: '#fb8500', backgroundColor: 'rgba(251, 133, 0, 0.1)', borderWidth: 2, borderDash: [5, 5], tension: 0.4, fill: true, pointRadius: 0 },
                                 { label: 'Precio 2025', data: datosMensuales[2025].precio, borderColor: '#7b2cbf', backgroundColor: 'rgba(123, 44, 191, 0.1)', borderWidth: 3, tension: 0.4, fill: true, pointRadius: 0 },
                                 { label: 'Costo 2025', data: datosMensuales[2025].costo, borderColor: '#dc2626', backgroundColor: 'rgba(220, 38, 38, 0.1)', borderWidth: 3, borderDash: [5, 5], tension: 0.4, fill: true, pointRadius: 0 }
@@ -916,21 +916,6 @@
                     }));
                 }
 
-                // Chart 3
-                if (chart3Ref.current) {
-                    charts.push(new Chart(chart3Ref.current, {
-                        type: 'bar',
-                        data: {
-                            labels: ['Actual', 'Conservador +15%', 'Moderado +25%', 'Agresivo +35%', 'Objetivo +44%'],
-                            datasets: [{
-                                label: 'Margen %', data: [39.8, 43.6, 47.1, 49.8, 57.2],
-                                backgroundColor: ['rgba(220, 38, 38, 0.7)', 'rgba(251, 133, 0, 0.7)', 'rgba(234, 179, 8, 0.7)', 'rgba(34, 197, 94, 0.7)', 'rgba(5, 150, 105, 0.7)']
-                            }]
-                        },
-                        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
-                    }));
-                }
-
                 return () => charts.forEach(c => c.destroy());
             }, []);
 
@@ -949,7 +934,7 @@
                             <div className="metric-card orange"><div className="metric-label">{t.strat.kpi4}</div><div className="metric-value">$4.81M</div><div className="metric-change negative">{t.strat.kpi4Sub}</div></div>
                         </div>
 
-                        <div className="chart-container"><div className="chart-title">{t.strat.chart1Title}</div><div className="chart-wrapper"><canvas ref={chart1Ref}></canvas></div></div>
+                        <div className="chart-container"><div className="chart-title">{t.strat.chart1Title}</div><div className="chart-wrapper"><canvas ref={chart1Ref}></canvas></div><p className="text-xs text-center text-gray-400 mt-2">{t.strat.clickToHide}</p></div>
                         
                         <div className="insight-box"><h3>{t.strat.insightTitle}</h3><p>{t.strat.insightDesc}</p></div>
 
@@ -966,7 +951,7 @@
                         </div>
 
                         <h2 className="section-title">{t.strat.chart2Title}</h2>
-                        <div className="chart-container"><div className="chart-wrapper"><canvas ref={chart2Ref}></canvas></div></div>
+                        <div className="chart-container"><div className="chart-wrapper"><canvas ref={chart2Ref}></canvas></div><p className="text-xs text-center text-gray-400 mt-2">{t.strat.clickToHide}</p></div>
 
                         <div className="table-container">
                             <div className="chart-title">{t.strat.table2Title}</div>
@@ -981,9 +966,6 @@
                                 </tbody>
                             </table>
                         </div>
-
-                        <h2 className="section-title">{t.strat.chart3Title}</h2>
-                        <div className="chart-container"><div className="chart-wrapper" style={{height:'300px'}}><canvas ref={chart3Ref}></canvas></div></div>
 
                         <h2 className="section-title">{t.strat.planTitle}</h2>
                         <div className="priority-section priority-1">
